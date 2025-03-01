@@ -1,156 +1,134 @@
-<div align="center">
-  <img src="./images/koa.png"/>
-</div>   
+# 聚合支付系统
 
-<h1 align="center">基于Koa2搭建Node.js实战项目教程</h1>
+## 项目简介
 
+本项目是一个基于 Koa2 和 Vue3 开发的现代化聚合支付系统，提供多种支付方式的集成解决方案，支持支付宝、微信支付和银行卡支付等多种支付渠道。
 
-<h4 align="right">🇨🇳  喜迎十九大 🇨🇳</h1>
+## 技术栈
 
-<br/>
-<br/>
-<br/>
-<br/>
+### 后端技术栈
+- Koa2：轻量级的 Node.js Web 框架
+- Sequelize：ORM 框架，用于数据库操作
+- MySQL：关系型数据库
 
-<div align="center">
-  <img src="./images/develop-logo.png"/>
-</div>   
+### 前端技术栈
+- Vue3：渐进式 JavaScript 框架
+- Element Plus：基于 Vue3 的组件库
+- Vite：现代前端构建工具
+- Pinia：Vue3 的状态管理方案
+- Vue Router：Vue.js 的官方路由
 
-<br/>
+## 核心功能
 
-## 🇨🇳  与众不同的学习方式，为你打开新的编程视角 
+- 多支付渠道集成
+  - 支付宝支付
+  - 微信支付
+  - 银行卡支付
 
-- 独特的『同步学习』方式  
-  - 文案讲解+视频演示，文字可激发深层的思考、视频可还原实战操作过程。 
+- 订单管理
+  - 订单创建和查询
+  - 支付状态实时更新
+  - 订单历史记录
 
-- 云集一线大厂有真正实力的程序员  
-  - iKcamp 团队云集一线大厂经验丰厚的码农，开源奉献各教程。  
+- 用户系统
+  - 用户注册和登录
+  - 个人中心
+  - 交易记录查询
 
-- 改版自真实的线上项目  
-  - 教程项目并非网上随意 `Demo`，而是来源于真实线上项目，并改版定制为教程项目
+## 项目结构
 
-- 源码开放  
-  - 课程案例代码完全开放给你，你可以根据所学知识自行修改、优化。
-
-<br/>
-
-<div align="center">
-  <img src="./images/develop-nodejs.png" width="250"/>
-</div>
-
-<br/>
-
-## 🇨🇳  玩转 Node.js 同时全面掌握潮流技术 
-
-* 采用新一代的 Web 开发框架—— Koa2 ——更小、更富有表现力、更健壮。 
-
-* 使用 fs、buffer、http、path 等 Node.js 最核心 API。
-
-* 融合多种常见的需求场景：网络请求、JSON 解析、模板引擎、静态资源、日志记录、错误请求处理。 
-
-* 结合 async await (ES6/7) 语句中转中间件控制权，解决回调地狱问题。
-
-<br/>
-
-<div align="center">
-  <img src="./images/develop-hero.png" width="150"/>
-</div>
-
-<br/>
-
-## 🇨🇳  适合人群及技术储备要求 
-> 如果你是一个有全栈梦想的前端开发者，或是想要入门 `Node.js`，那么来学习本课程，学完不仅实现你的全栈梦想，更让你无缝衔
-接 `Node` 应用公司的现代前端开发体系和流程。
-
-- Node.js
-- ES6/7 语法知识
-- 了解 HTTP 协议 
-
-<br>
-
-<div align="center">
-  <img src="./images/develop-snake.png" width="150"/>
-</div>
-
-<br/>
-
-## 🇨🇳  亮点的课程设计，让你对 Node.js 豁然开朗 
-
--  基础篇
-   - 环境准备——安装搭建项目的开发环境
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/0-start)　　　　[文章视频](https://camp.qianduan.group/koa2/2/1/1)
-   - 中间件用法——讲解 Koa2 中间件的用法及如何开发中间件
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/1-middleware)　　　　[文章视频](https://camp.qianduan.group/koa2/2/1/2)
-   - 路由koa-router——MVC 中重要的环节：Url 处理器
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/2-koa-router)　　　　[文章视频](https://camp.qianduan.group/koa2/2/1/3)
-   - POST/GET请求——常见请求方式处理
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/3-router-request)　　　　[文章视频](https://camp.qianduan.group/koa2/2/1/4)
-   - 代码分层——梳理代码，渐近于 MVC 分层模式
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/4-refactor)　　　　[文章视频](https://camp.qianduan.group/koa2/2/1/5)
-   - 视图nunjucks——Koa 默认支持的模板引擎
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/5-nunjucks)　　　　[文章视频](https://camp.qianduan.group/koa2/2/1/6)
-   - 处理静态资源——指定静态文件目录，设定缓存
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/6-static)　　　　[文章视频](https://camp.qianduan.group/koa2/2/1/7)
-- 提升篇
-   - 解析JSON——让 Koa2 支持响应 JSON 数据
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/7-mi-send)　　　　[文章视频](https://camp.qianduan.group/koa2/2/2/1)
-   - 记录日志——开发日志中间件，记录项目中的各种形式信息
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/8-mi-log)　　　　[文章视频](https://camp.qianduan.group/koa2/2/2/2)
-   - 错误处理——处理 HTTP 特定错误请求场景
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/9-mi-http-error)　　　　[文章视频](https://camp.qianduan.group/koa2/2/2/3)
-   - 规范与部署——制定合适的团队规范，提升开发效率
-      - [GitHub](https://github.com/ikcamp/koa2-tutorial/tree/10-mi-rule)　　　　[文章视频](https://camp.qianduan.group/koa2/2/2/5)
-
-
-<br/>
-
-## 🇨🇳  以 git 分布式版本控制系统，来学习和管理项目代码 
-
-<br/>
-
-1. 通过 `git` 把项目复制到本地
-```git
-git clone https://github.com/ikcamp/koa2-tutorial
+```
+├── code
+│   ├── backend         # 后端代码
+│   │   ├── config     # 配置文件
+│   │   ├── models    # 数据模型
+│   │   ├── routes    # 路由控制
+│   │   └── app.js    # 应用入口
+│   │
+│   └── frontend        # 前端代码
+│       ├── src        # 源代码
+│       ├── public     # 静态资源
+│       └── index.html # HTML 入口
 ```
 
-2. 切换目录
-```shell
-cd koa2-tutorial
+## 快速开始
+
+### 环境要求
+- Node.js >= 14
+- MySQL >= 5.7
+
+### 后端部署
+1. 进入后端目录
+```bash
+cd code/backend
 ```
 
-3. 在当前目录下切换分支
-```git
-git checkout 0-start
+2. 安装依赖
+```bash
+npm install
 ```
 
-4. 进入到项目目录 `code`
-```shell
-cd code/
+3. 配置数据库
+编辑 `config/db.js` 文件，设置数据库连接信息
+
+4. 启动服务
+```bash
+npm run dev
 ```
 
-<br/>
+### 前端部署
+1. 进入前端目录
+```bash
+cd code/frontend
+```
 
-**注意：** 所有的分支命名上，都以数字开头，序号就是我们的开发顺序和讲解顺序。
+2. 安装依赖
+```bash
+npm install
+```
 
-**注意：** 分支中的 `code/` 目录为当节课程后的完整代码。   
+3. 启动开发服务器
+```bash
+npm run dev
+```
 
-<br>
+## 测试
 
-## 🇨🇳  下载完整项目代码   
-> 教程的完整代码在主干 `master` 中，请自行[查阅📖 ](https://github.com/ikcamp/koa2-tutorial/tree/master)
+### 环境要求
+- Node.js >= 16
+- npm >= 8
 
-<br> 
+### 前端测试
+1. 进入前端目录
+```bash
+cd code/frontend
+```
 
-## 🇨🇳  iKcamp 制作团队  
+2. 安装依赖（如果尚未安装）
+```bash
+npm install
+```
 
-原创作者：[大哼](https://github.com/pplgin)、[阿干](https://github.com/xiaoyaojun)、[三三](https://github.com/l3ve)、[小虎](https://github.com/tinyuen)、[胖子](https://github.com/pangz1)、[小哈](http://zoei.me/)、[DDU](https://github.com/DDU1222)、[可木](https://github.com/cfancc)、[晃晃](https://github.com/walterxu0704)  
-文案校对：[李益](https://github.com/yliiii)、[大力萌](https://github.com/yanyixin)、[Au](https://github.com/MatildaJin)、[DDU](https://github.com/DDU1222)、[小溪里](http://www.xiaoxili.com/)、[小哈](http://zoei.me/)  
-风采主播：[可木](https://github.com/cfancc)、[阿干](https://github.com/xiaoyaojun)、[Au](https://github.com/MatildaJin)、[DDU](https://github.com/DDU1222)、[小哈](http://zoei.me/)  
-视频剪辑：[小溪里](http://www.xiaoxili.com/)  
-主站运营：[给力xi](https://github.com/jackson13145)、[xty](https://github.com/xiatianyu)  
-教程主编：[张利涛](https://github.com/brucecham)  
+3. 运行测试
+```bash
+npm test
+```
 
-<br/>
+测试将执行以下内容：
+- 组件渲染测试
+- 用户交互测试
+- API调用测试
+- 生成测试覆盖率报告
 
-## 🇨🇳  活动问答交流专区  
-关于课程的问题都可随时在 [GitHub](https://github.com/ikcamp/koa2-tutorial/issues) 或 QQ群(661407609) 提问，讲师会进行集中答疑。
+测试完成后，可以在控制台查看测试结果和覆盖率报告。
+
+## 贡献指南
+
+1. Fork 本仓库
+2. 创建特性分支
+3. 提交代码
+4. 创建 Pull Request
+
+## 许可证
+
+本项目采用 ISC 许可证

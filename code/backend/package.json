@@ -1,0 +1,19 @@
+{
+  "name": "payment-system-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "koa": "^2.14.2",
+    "koa-bodyparser": "^4.4.1",
+    "koa-router": "^12.0.0",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
