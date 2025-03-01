@@ -8,7 +8,7 @@
     </el-row>
 
     <el-row :gutter="20" class="features-section">
-      <el-col :span="8">
+      <el-col :xs="24" :sm="24" :md="8">
         <el-card class="feature-card">
           <template #header>
             <div class="card-header">
@@ -22,7 +22,7 @@
         </el-card>
       </el-col>
 
-      <el-col :span="8">
+      <el-col :xs="24" :sm="24" :md="8">
         <el-card class="feature-card">
           <template #header>
             <div class="card-header">
@@ -36,7 +36,7 @@
         </el-card>
       </el-col>
 
-      <el-col :span="8">
+      <el-col :xs="24" :sm="24" :md="8">
         <el-card class="feature-card">
           <template #header>
             <div class="card-header">
@@ -80,9 +80,15 @@ const userStore = useUserStore()
 
 <style scoped>
 .home-container {
-  padding: 40px;
+  padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .home-container {
+    padding: 20px 15px;
+  }
 }
 
 .welcome-section {
@@ -101,8 +107,28 @@ const userStore = useUserStore()
   color: #606266;
 }
 
+@media screen and (max-width: 768px) {
+  .welcome-section h1 {
+    font-size: 2em;
+  }
+  
+  .subtitle {
+    font-size: 1.1em;
+  }
+}
+
 .features-section {
   margin-bottom: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .features-section .el-col {
+    margin-bottom: 20px;
+  }
+  
+  .features-section .el-col:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .feature-card {
@@ -128,6 +154,8 @@ const userStore = useUserStore()
 .card-content {
   color: #606266;
   line-height: 1.6;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .action-section {
