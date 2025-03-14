@@ -1,5 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import dbConfig from '../config/db.js';
+import bcrypt from 'bcrypt';
 
 const sequelize = new Sequelize(
   dbConfig.database,
@@ -70,4 +71,26 @@ const User = sequelize.define('User', {
   }
 });
 
+User.beforeCreate(async (user) => {
+  if (user.changed('password')) {
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(user.password, salt);
+  }
+});
+
+User.beforeUpdate(async (user) => {
+  if (user.changed('password')) {
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(user.password, salt);
+  }
+});
+
+User.prototype.validPassword = async function(password) {
+  try {
+    return await bcrypt.compare(password, this.password);
+  } catch (error) {
+    console.error('密码验证失败:', error);
+    return false;
+  }
+};
 export default User;

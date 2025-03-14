@@ -23,13 +23,20 @@ const router = createRouter({
       path: '/orders',
       name: 'orders',
       component: () => import('../views/Orders.vue'),
-      meta: { requiresAuth: true }
+      meta: { requiresAuth: true, requiresAdmin: true }
     },
     {
-      path: '/profile',
+      // 用户管理路由
+  path: '/users',
+  name: 'users',
+  component: () => import('../views/UserList.vue'),
+  meta: { requiresAuth: false, requiresAdmin: false }
+},
+{
+  path: '/profile',
       name: 'profile',
       component: () => import('../views/Profile.vue'),
-      meta: { requiresAuth: true }
+      meta: { requiresAuth: true, requiresAdmin: true }
     }
   ]
 })

@@ -54,6 +54,16 @@ export const useUserStore = defineStore('user', {
       }
     },
 
+    async fetchUsers() {
+      try {
+        const response = await axios.get('/api/users');
+        return response.data;
+      } catch (error) {
+        console.error('获取用户列表失败:', error);
+        throw error;
+      }
+    },
+
     async fetchUserInfo() {
       if (!this.userId) return
       

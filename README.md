@@ -70,6 +70,55 @@ npm install
 
 3. 配置数据库
 编辑 `config/db.js` 文件，设置数据库连接信息
+4. 初始化数据库
+```bash
+npx sequelize db:migrate
+```
+
+5. 启动服务
+```bash
+npm start
+```
+
+### 前端部署
+1. 进入前端目录
+```bash
+cd code/frontend
+```
+
+2. 安装依赖
+```bash
+npm install
+```
+
+3. 启动开发服务器
+```bash
+npm run dev
+```
+
+## 开发环境
+
+### 环境要求
+- Node.js >= 14
+- MySQL >= 5.7
+
+### 后端部署
+1. 进入后端目录 
+```bash
+cd code/backend
+```         
+
+### 前端UI框架
+- Tailwind CSS
+- HeadlessUI
+
+2. 安装依赖
+```bash
+npm install
+```
+
+3. 配置数据库
+编辑 `config/db.js` 文件，设置数据库连接信息                    
 
 4. 启动服务
 ```bash
