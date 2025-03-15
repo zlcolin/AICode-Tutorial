@@ -38,7 +38,7 @@
 ## 项目结构
 
 ```
-├── code
+├── psystem
 │   ├── backend         # 后端代码
 │   │   ├── config     # 配置文件
 │   │   ├── models    # 数据模型
@@ -60,7 +60,7 @@
 ### 后端部署
 1. 进入后端目录
 ```bash
-cd code/backend
+cd psystem/backend
 ```
 
 2. 安装依赖
@@ -69,7 +69,28 @@ npm install
 ```
 
 3. 配置数据库
-编辑 `config/db.js` 文件，设置数据库连接信息
+在项目根目录创建 `.env` 文件，根据需要配置数据库连接信息：
+
+```env
+# 数据库类型配置 (支持 sqlite 或 mysql)
+DB_DIALECT=sqlite
+
+# SQLite配置
+DB_STORAGE=./psystem.sqlite  # SQLite数据库文件路径
+
+# MySQL配置（如果使用MySQL，请配置以下信息）
+DB_NAME=psystem
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=3306
+
+# 数据库连接池配置（可选）
+DB_POOL_MAX=5
+DB_POOL_MIN=0
+DB_POOL_ACQUIRE=30000
+DB_POOL_IDLE=10000
+```
 4. 初始化数据库
 ```bash
 npx sequelize db:migrate
@@ -83,7 +104,7 @@ npm start
 ### 前端部署
 1. 进入前端目录
 ```bash
-cd code/frontend
+cd psystem/frontend
 ```
 
 2. 安装依赖
@@ -105,7 +126,7 @@ npm run dev
 ### 后端部署
 1. 进入后端目录 
 ```bash
-cd code/backend
+cd psystem/backend
 ```         
 
 ### 前端UI框架
@@ -118,7 +139,28 @@ npm install
 ```
 
 3. 配置数据库
-编辑 `config/db.js` 文件，设置数据库连接信息                    
+在项目根目录创建 `.env` 文件，根据需要配置数据库连接信息：
+
+```env
+# 数据库类型配置 (支持 sqlite 或 mysql)
+DB_DIALECT=sqlite
+
+# SQLite配置
+DB_STORAGE=./psystem.sqlite  # SQLite数据库文件路径
+
+# MySQL配置（如果使用MySQL，请配置以下信息）
+DB_NAME=psystem
+DB_USER=your_username
+DB_PASSWORD=your_password
+DB_HOST=localhost
+DB_PORT=3306
+
+# 数据库连接池配置（可选）
+DB_POOL_MAX=5
+DB_POOL_MIN=0
+DB_POOL_ACQUIRE=30000
+DB_POOL_IDLE=10000
+```                    
 
 4. 启动服务
 ```bash
@@ -128,7 +170,7 @@ npm run dev
 ### 前端部署
 1. 进入前端目录
 ```bash
-cd code/frontend
+cd psystem/frontend
 ```
 
 2. 安装依赖
@@ -150,7 +192,7 @@ npm run dev
 ### 前端测试
 1. 进入前端目录
 ```bash
-cd code/frontend
+cd psystem/frontend
 ```
 
 2. 安装依赖（如果尚未安装）
