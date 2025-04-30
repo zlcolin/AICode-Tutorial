@@ -1,6 +1,6 @@
-import { DataTypes } from 'sequelize';
+import { DataTypes, Sequelize } from 'sequelize';
 import bcrypt from 'bcrypt';
-import { sequelize, Sequelize } from '../db/connection.js';
+import { sequelize } from '../config/test_db_connection.js';
 
 
 const User = sequelize.define('User', {
@@ -52,11 +52,11 @@ const User = sequelize.define('User', {
   },
   createdAt: {
     type: DataTypes.DATE,
-    defaultValue: Sequelize.NOW
+    defaultValue: DataTypes.NOW
   },
   updatedAt: {
     type: DataTypes.DATE,
-    defaultValue: Sequelize.NOW
+    defaultValue: DataTypes.NOW
   }
 });
 
@@ -87,9 +87,3 @@ User.associate = function(models) {
 };
 
 export default User;
-
-User.init(User.rawAttributes, {
-  ...User.options,
-  tableName: 'users',
-  sequelize
-});

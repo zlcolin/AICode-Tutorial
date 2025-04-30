@@ -30,7 +30,12 @@ app.on('error', (err, ctx) => {
   console.error('服务器错误', err);
 });
 
-// 启动服务器
-app.listen(3000, () => {
-  console.log('服务器运行在 http://localhost:3000');
-});
+// 启动服务器（仅在直接运行时）
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(3000, () => {
+    console.log('服务器运行在 http://localhost:3000');
+  });
+}
+
+// 导出app实例供测试使用
+export default app;

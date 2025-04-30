@@ -213,13 +213,6 @@ npm test
 
 测试完成后，可以在控制台查看测试结果和覆盖率报告。
 
-## 贡献指南
-
-1. Fork 本仓库
-2. 创建特性分支
-3. 提交代码
-4. 创建 Pull Request
-
-## 许可证
-
-本项目采用 ISC 许可证
+## 辅助工具
+https://github.com/ahmedkhaleel2004/gitdiagram
+https://node-modules.dev/

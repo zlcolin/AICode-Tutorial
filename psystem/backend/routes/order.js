@@ -3,7 +3,8 @@ import Order from '../models/order.js';
 import Payment from '../models/payment.js';
 import User from '../models/user.js';
 
-const router = new Router({ prefix: '/api/orders' });
+const router = new Router(
+  { prefix: '/api/orders' });
 
 // 创建订单
 router.post('/', async (ctx) => {

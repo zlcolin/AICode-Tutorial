@@ -1,13 +1,23 @@
 import { beforeAll, afterAll } from 'vitest'
 import { Sequelize } from 'sequelize'
-import dbConfig from '../config/db.js'
+import dbConfig from '../config/config.js'
 import User from '../models/user.js'
 
 // 测试数据库配置
 const testDbConfig = {
   ...dbConfig,
-  database: 'psystem_test.sqlite',
-  storage: './psystem_test.sqlite'
+  // 指定使用 MySQL 数据库
+  dialect: 'mysql',
+  // 测试数据库名
+  database: 'psystem',
+  // MySQL 主机地址
+  host: '192.168.229.26',
+  // MySQL 端口
+  port: 3306,
+  // MySQL 用户名
+  username: 'PS01',
+  // MySQL 密码
+  password: 'PS01PWD'
 }
 
 // 创建测试数据库连接

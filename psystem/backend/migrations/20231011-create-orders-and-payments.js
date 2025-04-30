@@ -1,19 +1,21 @@
-module.exports.up = async (queryInterface, Sequelize) => {
+import { Sequelize } from 'sequelize';
+
+export const up = async (queryInterface, { DataTypes }) => {
   // 创建订单表
   await queryInterface.createTable('Orders', {
     id: {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     orderNo: {
-      type: Sequelize.STRING(50),
+      type: DataTypes.STRING(50),
       allowNull: false,
       unique: true
     },
     userId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Users',
@@ -21,20 +23,20 @@ module.exports.up = async (queryInterface, Sequelize) => {
       }
     },
     amount: {
-      type: Sequelize.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
     status: {
-      type: Sequelize.ENUM('pending', 'completed', 'failed'),
+      type: DataTypes.ENUM('pending', 'completed', 'failed'),
       defaultValue: 'pending'
     },
     createdAt: {
       allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     },
     updatedAt: {
       allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   });
 
@@ -44,10 +46,10 @@ module.exports.up = async (queryInterface, Sequelize) => {
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: Sequelize.INTEGER
+      type: DataTypes.INTEGER
     },
     orderId: {
-      type: Sequelize.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Orders',
@@ -55,28 +57,28 @@ module.exports.up = async (queryInterface, Sequelize) => {
       }
     },
     amount: {
-      type: Sequelize.DECIMAL(10, 2),
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
     paymentMethod: {
-      type: Sequelize.ENUM('alipay', 'wechat', 'bank'),
+      type: DataTypes.ENUM('alipay', 'wechat', 'bank'),
       allowNull: false
     },
     transactionId: {
-      type: Sequelize.STRING(100),
+      type: DataTypes.STRING(100),
       allowNull: true
     },
     status: {
-      type: Sequelize.ENUM('pending', 'success', 'failed'),
+      type: DataTypes.ENUM('pending', 'success', 'failed'),
       defaultValue: 'pending'
     },
     createdAt: {
       allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     },
     updatedAt: {
       allowNull: false,
-      type: Sequelize.DATE
+      type: DataTypes.DATE
     }
   });
 };

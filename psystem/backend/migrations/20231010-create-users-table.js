@@ -1,4 +1,5 @@
-module.exports.up = async (queryInterface, Sequelize) => {
+// 将 CommonJS 导出改为 ES Module 导出
+export const up = async (queryInterface, Sequelize) => {
   await queryInterface.createTable('users', {
     id: {
       allowNull: false,
@@ -45,6 +46,10 @@ module.exports.up = async (queryInterface, Sequelize) => {
   });
 };
 
-module.exports.down = async (queryInterface, Sequelize) => {
-  await queryInterface.dropTable('users');
+export const down = async (queryInterface, Sequelize) => {
+};
+
+// 添加默认导出以兼容 sequelize-cli
+export default { up, down };
+    wait queryInterface.dropTable('users');
 };

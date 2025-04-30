@@ -14,12 +14,13 @@ describe('用户接口测试', () => {
       .send({
         username: 'testuser',
         password: 'password123',
-        email: 'test@example.com'
+        email: 'testuser@example.com'
       })
 
     expect(response.status).toBe(201)
     expect(response.body.status).toBe('success')
     expect(response.body.data.username).toBe('testuser')
+    expect(response.body.data.email).toBe('testuser@example.com')
   })
 
   it('应该验证重复用户名', async () => {
@@ -41,6 +42,6 @@ describe('用户接口测试', () => {
 
     expect(response.status).toBe(400)
     expect(response.body.status).toBe('error')
-    expect(response.body.message).toContain('用户名已存在')
+    expect(response.body.message).toContain('用户名可能已存在')
   })
 })

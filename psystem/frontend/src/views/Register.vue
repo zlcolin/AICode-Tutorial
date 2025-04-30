@@ -153,7 +153,10 @@ const handleSubmit = async () => {
     const success = await userStore.register(
       form.username,
       form.password,
-      form.email
+      form.email,
+      form.resourceId,
+      form.phone,
+      form.wechat
     )
     
     if (success) {
